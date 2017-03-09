@@ -1,8 +1,8 @@
-
 from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
+url(r'^usercmd/',views.remote_cmd, name='remote_cmd' ),
 url(r'^usercmd/',views.remote_cmd, name='remote_cmd' ),
 url(r'^$', views.index, name='index'),
 url(r'^remotecmd/', views.cmd_input, name='cmd_input'),
