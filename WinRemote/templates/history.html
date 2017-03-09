@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windwos Remote Application</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+
+    background-color: rgba(213, 217, 241, 0.47);
+}
+
+</style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row text-center">
+    <h1> Windows Remote Application</h1> <br>
+<nav class="navbar navbar-default" style="background-color: #337ab7 !important">
+   <div class="container-fluid">
+
+       <ul class="nav navbar-nav">
+      <li> <a style="color:white" href="/winremote/">Home</a></li>
+        <li><a style="color:white" href="/winremote/remotecmd">Remote Command</a></li>
+       <li class="active"><a style="color:white" href="/winremote/history">Command History</a></li>
+        <li><a style="color:white" href="/winremote/tool">Remote Tool</a></li>
+         <li><a style="color:white" href="/winremote/startapp/">Start / Stop Service</a></li>
+
+       </ul>
+         <ul class="nav navbar-nav navbar-right">
+
+        <li align="right"><a style="color:white" href="/winremote/login/">Logout</a></li>
+
+        </ul>
+  </div>
+</nav>
+        <table border="1px" class="table table-striped table-hover" cellpadding="17px" cellspacing="17px">
+            <tr style="text-align:center">
+                <th>No</th>
+                <th>ip</th>
+                <th>Command</th>
+                <th>Output</th>
+                <th>time</th>
+            </tr>
+
+            {% for list in obj %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{list.ip}}</td>
+                <td>{{list.command}}</td>
+                <td>{{list.output}}</td>
+                <td>{{list.time}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr>
+
+
+
+</div>
+
+<hr>
+
+
+</div>
+    </div>
+</body>
+</html>
